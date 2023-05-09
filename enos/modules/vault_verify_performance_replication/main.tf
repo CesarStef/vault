@@ -58,7 +58,7 @@ resource "enos_remote_exec" "replication_status_on_primary" {
     REPLICATION_MODE  = "primary"
   }
 
-  scripts = ["${path.module}/scripts/get-replication-status.sh"]
+  scripts = [abspath("${path.module}/scripts/get-replication-status.sh")]
 
   transport = {
     ssh = {
@@ -83,7 +83,7 @@ resource "enos_remote_exec" "replication_status_on_secondary" {
     REPLICATION_MODE  = "secondary"
   }
 
-  scripts = ["${path.module}/scripts/get-replication-status.sh"]
+  scripts = [abspath("${path.module}/scripts/get-replication-status.sh")]
 
   transport = {
     ssh = {
